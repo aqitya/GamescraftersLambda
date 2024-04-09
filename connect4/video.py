@@ -216,3 +216,5 @@ def extract_frames(video_path, skip_frames=20):
 
     cap.release()
     return output_strings
+
+print(extract_frames('/uploads/c4cv.mov'))
