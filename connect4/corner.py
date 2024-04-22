@@ -15,9 +15,9 @@ def corners(image=TEST_IMAGE):
     gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 30, 255, cv2.THRESH_BINARY)
 
-    cv2.imwrite('./uploads/yellow.png', yellow)
-    cv2.imwrite('./uploads/gray.png', gray)
-    cv2.imwrite('./uploads/binary.png', thresh)
+    # cv2.imwrite('./uploads/yellow.png', yellow)
+    # cv2.imwrite('./uploads/gray.png', gray)
+    # cv2.imwrite('./uploads/binary.png', thresh)
     
     # Find all contours in the image
     contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -46,8 +46,8 @@ def corners(image=TEST_IMAGE):
             M = cv2.getPerspectiveTransform(corners, dst_points)
             rectified_img = cv2.warpPerspective(original, M, (WIDTH, HEIGHT))
 
-            cv2.imwrite('./uploads/marked.png', marked_img)
-            cv2.imwrite('./uploads/rectified.png', rectified_img)
+            # cv2.imwrite('./uploads/marked.png', marked_img)
+            # cv2.imwrite('./uploads/rectified.png', rectified_img)
  
 def yellow_mask(image):
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
